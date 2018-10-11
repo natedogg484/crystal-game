@@ -6,14 +6,14 @@
 var targetNumber = Math.floor(Math.random() * (120 - 19) + 19);
 console.log(targetNumber)
 
-$("#target-text").text("Your Target:  " + targetNumber);
+
 
 var counter = 0;
 var wins = 0;
 var losses = 0;
 
 $(document).ready(function () {
-
+    $("#target-text").text("Your Target:  " + targetNumber);
 
 $("img").click(function () {
     for (var i = 0; i < 1; i++) {
@@ -39,12 +39,14 @@ if (counter === targetNumber) {
     counter = 0;
     targetNumber = Math.floor(Math.random() * (120 - 19) + 19);
     alert("You won! Click to play again!")
+    $("#target-text").text("Your Target:  " + targetNumber);
 }
 else if (counter > targetNumber) {
     losses++;
     counter = 0;
     targetNumber = Math.floor(Math.random() * (120 - 19) + 19);
     alert("You lost! Click to play again!")
+    $("#target-text").text("Your Target:  " + targetNumber);
 }
 
 });
